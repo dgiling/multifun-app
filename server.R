@@ -31,7 +31,8 @@ cor.mtest <- function(mat, ...) {
 
 # Define server logic
 shinyServer(function(input, output, session) {
-  
+  shinyjs::runjs('toggleCodePosition();')
+
   observeEvent(input$gen.data, {
     updateTabsetPanel(session, "main",
                       selected = "Data simulation results")

@@ -1,6 +1,7 @@
 
 # Packages
 library(shiny)
+library(shinyjs)
 library(simstudy)
 library(corrplot)
 library(reshape2)
@@ -17,7 +18,7 @@ library(irlba)
 # Define UI
 shinyUI(
   fluidPage(
-
+  useShinyjs(),
   # Title
   titlePanel("Generate hypotheses for global change effects on ecosystem multifunctionality"),
   
