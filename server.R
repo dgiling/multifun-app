@@ -13,21 +13,6 @@ plot.simple <- function(data, x, y, xlab, ylab) {
     theme(panel.grid = element_blank())
 }
 
-cor.mtest <- function(mat, ...) {
-  mat <- as.matrix(mat)
-  n <- ncol(mat)
-  p.mat<- matrix(NA, n, n)
-  diag(p.mat) <- 0
-  for (i in 1:(n - 1)) {
-    for (j in (i + 1):n) {
-      tmp <- cor.test(mat[, i], mat[, j], ...)
-      p.mat[i, j] <- p.mat[j, i] <- tmp$p.value
-    }
-  }
-  colnames(p.mat) <- rownames(p.mat) <- colnames(mat)
-  p.mat
-}
-
 
 # Define server logic
 shinyServer(function(input, output, session) {
@@ -179,7 +164,7 @@ shinyServer(function(input, output, session) {
   output$plotD <- renderPlot({
     
     m <- cor(dt()[,c("F1", "F2", "F3", "F4")])
-    p.mat <- cor.mtest(dt()[,c("F1", "F2", "F3", "F4")])
+    p.mat <- cor.mtest(dt()[,c("F1", "F2", "F3", "F4")])$p.value
     
     col <- colorRampPalette(c("#BB4444", "#EE9988", "#FFFFFF", "#77AADD", "#4477AA"))
     corrplot(m, method="color", col=col(200),  order="alphabet", number.cex=1.25,
