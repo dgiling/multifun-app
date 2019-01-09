@@ -123,14 +123,14 @@ shinyUI(
                # update this in word doc  
                br(),  
                
-               h3("Introduction"),
-               h5("This application is designed to assist researchers investigating the effects of global change on ecosystem multifunctionality (i.e. GC-EMF research) to develop mechanistic hypotheses. The application accompanies Giling et al. (accepted). Please see the paper for a comprehensive description of the framework presented here."),
-               h5("The user provides hypothesized effect sizes for 1) the effect of a global change driver on biotic and/or abiotic mechanisms that drive functioning (e.g. species diversity or water availability), and 2) the influence of these mechanisms on multiple individual functions. The application then generates a simple dataset based on these hypotheses to explore the multifunctionality responses using both the averaging and threshold approaches. These simulations can be used to quickly visualize and disentangle how the interacting ecological and mathematical effects underlying the conceptual model influence the emergent GC-EMF relationship."),
+               h4("Introduction"),
+               helpText("This application is designed to assist researchers investigating the effects of global change on ecosystem multifunctionality (i.e. GC-EMF research) to develop mechanistic hypotheses. The application accompanies ", a("Giling et al. (2018)", href="https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.14528"),". Please see the paper for a comprehensive description of the framework presented here."),
+               helpText("The user provides hypothesized effect sizes for 1) the effect of a global change driver on biotic and/or abiotic mechanisms that drive functioning (e.g. species diversity or water availability), and 2) the influence of these mechanisms on multiple individual functions. The application then generates a simple dataset based on these hypotheses to explore the multifunctionality responses using both the averaging and threshold approaches. These simulations can be used to quickly visualize and disentangle how the interacting ecological and mathematical effects underlying the conceptual model influence the emergent GC-EMF relationship."),
                br(),
                
-               h3("Instructions"),
-               h5("Hypotheses are entered in the sidebar on the left. Each equation represents one or two arrows from the conceptual model below. A zero (e.g. '0*M1' or just '0') indicates no effect. Interactive effects can also be added (e.g. '1*M1*M2'). The arrow 'a' can be set as pointing left or right (but not bidirectional). To exclude arrow a, simply do not include M1 or M2 as a predictor variable in Eqn. 1 or 2."),
-               h5("Click 'Generate data' after making hypotheses to run a simulation"),
+               h4("Instructions"),
+               helpText("Hypotheses are entered in the sidebar on the left. Each equation represents one or two arrows from the conceptual model below. A zero (e.g. '0*M1' or just '0') indicates no effect. Interactive effects can also be added (e.g. '1*M1*M2'). The arrow 'a' can be set as pointing left or right (but not bidirectional). To exclude arrow a, simply do not include M1 or M2 as a predictor variable in Eqn. 1 or 2."),
+               helpText("Click 'Generate data' after making hypotheses to run a simulation"),
                br()
                  
              ),
@@ -143,21 +143,21 @@ shinyUI(
              
              column(8, 
                     
-               h5("Figure 1. Conceptual framework demonstrating the suggested steps for building mechanistic hypotheses of global change effects on ecosystem multifunctionality. Step 1 entails defining the effect of a global change driver on mechanisms that may be important for ecosystem function (blue arrows). Two mechanisms are displayed here (M1 and M2), and they may influence each other (horizontal blue arrow a). At Step 2, the hypothesized additive or interactive effects of these mechanisms on individual functions (F1-F4) are defined (red arrows). Finally, Step 3 involves considering how the method of multifunctionality calculation affects the interpretation of emergent global change effects (green brace)."),     
+               h4("Figure 1. Conceptual framework demonstrating the suggested steps for building mechanistic hypotheses of global change effects on ecosystem multifunctionality. Step 1 entails defining the effect of a global change driver on mechanisms that may be important for ecosystem function (blue arrows). Two mechanisms are displayed here (M1 and M2), and they may influence each other (horizontal blue arrow a). At Step 2, the hypothesized additive or interactive effects of these mechanisms on individual functions (F1-F4) are defined (red arrows). Finally, Step 3 involves considering how the method of multifunctionality calculation affects the interpretation of emergent global change effects (green brace)."),     
                     
                br(),
-               h3("Methods"),
-               h5("Data are generated according to the relationships specified by the user using the simstudy package (Goldfeld 2018). The correlation matrix displays positive (blue) and negative (red) correlations that are significant at the level p = 0.05. Multifunctionality metrics are calculated from the simulated data using the multifunc package (Byrnes et al. 2014; Byrnes 2017). Lines of model fit are modelled by stat_smooth in ggplot2 (Wickham 2009) with 'lm' and 'glm' for the averaging and threshold approach, respectively. Predictions are shown for visual aid only, and no checks are made on model fit or normality and dispersion assumptions. A structural equation model is fitted using lavaan (Rosseel 2012) and plotted with semPlot (Epskamp 2017) (again there are no checks on fit). All predictions will be invalidated when relationships are non-linear."),
+               h4("Methods"),
+               helpText("Data are generated according to the relationships specified by the user using the simstudy package (Goldfeld 2018). The correlation matrix displays positive (blue) and negative (red) correlations that are significant at the level p = 0.05. Multifunctionality metrics are calculated from the simulated data using the multifunc package (Byrnes et al. 2014; Byrnes 2017). Lines of model fit are modelled by stat_smooth in ggplot2 (Wickham 2009) with 'lm' and 'glm' for the averaging and threshold approach, respectively. Predictions are shown for visual aid only, and no checks are made on model fit or normality and dispersion assumptions. A structural equation model is fitted using lavaan (Rosseel 2012) and plotted with semPlot (Epskamp 2017) (again there are no checks on fit). All predictions will be invalidated when relationships are non-linear."),
                br(),
                
-               h3("References"),
-               h5("Byrnes, J (2017). multifunc: Analysis of Ecological Drivers on Ecosystem Multifunctionality. R package version 0.8.0. https://github.com/jebyrnes/multifunc"),
-               h5("Byrnes, J. E. K. et al. Investigating the relationship between biodiversity and ecosystem multifunctionality: challenges and solutions. Methods in Ecology and Evolution 5, 111-124, doi:10.1111/2041-210X.12143 (2014)."),
-               h5("Epskamp, S and with contributions from Simon Stuber (2017). semPlot: Path Diagrams and Visual Analysis of Various SEM Packages' Output. R package version 1.1. https://CRAN.R-project.org/package=semPlot"),
-               h5("Giling D.P., Beaumelle L., Phillips H.R.P., Cesarz S., Eisenhauer N., Ferlian O., Gottschall F., Guerra C., Hines J., Sendek A., Siebert J., Thakur M.P. & Barnes A.D. (accepted) A niche for ecosystem multifunctionality in global change research. Global Change Biology."),
-               h5("Goldfeld, K (2018). simstudy: Simulation of Study Data. R package version 0.1.9. https://CRAN.R-project.org/package=simstudy"),
-               h5("Rosseel, Y (2012). lavaan: An R Package for Structural Equation Modeling. Journal of Statistical Software, 48(2), 1-36. URL http://www.jstatsoft.org/v48/i02/."),
-               h5("Wickham, H. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2009."),
+               h4("References"),
+               helpText("Byrnes, J (2017). multifunc: Analysis of Ecological Drivers on Ecosystem Multifunctionality. R package version 0.8.0. https://github.com/jebyrnes/multifunc"),
+               helpText("Byrnes, J. E. K. et al. Investigating the relationship between biodiversity and ecosystem multifunctionality: challenges and solutions. Methods in Ecology and Evolution 5, 111-124, doi:10.1111/2041-210X.12143 (2014)."),
+               helpText("Epskamp, S and with contributions from Simon Stuber (2017). semPlot: Path Diagrams and Visual Analysis of Various SEM Packages' Output. R package version 1.1. https://CRAN.R-project.org/package=semPlot"),
+               helpText("Giling D.P., Beaumelle L., Phillips H.R.P., Cesarz S., Eisenhauer N., Ferlian O., Gottschall F., Guerra C., Hines J., Sendek A., Siebert J., Thakur M.P. & Barnes A.D. (accepted) A niche for ecosystem multifunctionality in global change research. Global Change Biology."),
+               helpText("Goldfeld, K (2018). simstudy: Simulation of Study Data. R package version 0.1.9. https://CRAN.R-project.org/package=simstudy"),
+               helpText("Rosseel, Y (2012). lavaan: An R Package for Structural Equation Modeling. Journal of Statistical Software, 48(2), 1-36. URL http://www.jstatsoft.org/v48/i02/."),
+               helpText("Wickham, H. ggplot2: Elegant Graphics for Data Analysis. Springer-Verlag New York, 2009."),
                
                br()
                
