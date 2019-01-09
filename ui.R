@@ -143,7 +143,7 @@ shinyUI(
              
              column(8, 
                     
-               h4("Figure 1. Conceptual framework demonstrating the suggested steps for building mechanistic hypotheses of global change effects on ecosystem multifunctionality. Step 1 entails defining the effect of a global change driver on mechanisms that may be important for ecosystem function (blue arrows). Two mechanisms are displayed here (M1 and M2), and they may influence each other (horizontal blue arrow a). At Step 2, the hypothesized additive or interactive effects of these mechanisms on individual functions (F1-F4) are defined (red arrows). Finally, Step 3 involves considering how the method of multifunctionality calculation affects the interpretation of emergent global change effects (green brace)."),     
+               helpText("Figure 1. Conceptual framework demonstrating the suggested steps for building mechanistic hypotheses of global change effects on ecosystem multifunctionality. Step 1 entails defining the effect of a global change driver on mechanisms that may be important for ecosystem function (blue arrows). Two mechanisms are displayed here (M1 and M2), and they may influence each other (horizontal blue arrow a). At Step 2, the hypothesized additive or interactive effects of these mechanisms on individual functions (F1-F4) are defined (red arrows). Finally, Step 3 involves considering how the method of multifunctionality calculation affects the interpretation of emergent global change effects (green brace)."),     
                     
                br(),
                h4("Methods"),
