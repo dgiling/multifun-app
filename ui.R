@@ -124,7 +124,7 @@ shinyUI(
                br(),  
                
                h4("Introduction"),
-               helpText("This application is designed to assist researchers investigating the effects of global change on ecosystem multifunctionality (i.e. GC-EMF research) to develop mechanistic hypotheses. The application accompanies ", a("Giling et al. (2018)", href="https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.14528"),". Please see the paper for a comprehensive description of the framework presented here."),
+               helpText("This application is designed to assist researchers investigating the effects of global change on ecosystem multifunctionality (i.e. GC-EMF research) to develop mechanistic hypotheses. The application accompanies", a("Giling et al. (2018)", href="https://onlinelibrary.wiley.com/doi/full/10.1111/gcb.14528"),". Please see the paper for a comprehensive description of the framework presented here."),
                helpText("The user provides hypothesized effect sizes for 1) the effect of a global change driver on biotic and/or abiotic mechanisms that drive functioning (e.g. species diversity or water availability), and 2) the influence of these mechanisms on multiple individual functions. The application then generates a simple dataset based on these hypotheses to explore the multifunctionality responses using both the averaging and threshold approaches. These simulations can be used to quickly visualize and disentangle how the interacting ecological and mathematical effects underlying the conceptual model influence the emergent GC-EMF relationship."),
                br(),
                
